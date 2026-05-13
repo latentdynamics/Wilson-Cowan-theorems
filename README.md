@@ -17,14 +17,17 @@ parameters include:
 
 
  theorem 1 : claims that when c1 > 9/a_e, nullclines will have at least three intersections, giving at least three steady state solutions. 
- theorem 1 is tested first by keeping a_e fixed and sweeping c1 0 to 30 and steady states are counted using scipy.optimize.fsolve. the second test involves choosing c1 and a_e is such that the condition is satisfied and P and Q are sweeped through. 
+ theorem 1 is tested by choosing c1 and a_e is such that the condition is satisfied and P and Q are swept through. 
 
-theorem2: five steady states exist when a_e * a_i * c2* c3 > (a_e*c1 - 9)(a_i * c4 +9). the condition requires that c2c3, which is the measure of negative feedback loop, be relatively strong in a population.
-theorem 2 is tested by sweeping c3 0 to 30, keeping c2 fixed at 4. the steady states are counted by scipy.optimize.fsolve.
+theorem2: five steady states exist when a_e * a_i * c2* c3 > (a_e*c1 - 9)(a_i * c4 +9). the condition requires that c2c3, which is the measure of negative feedback loop, be stronger than the interactions between excitatory and inhibitory populations.
+theorem 2 is tested by fixing all the parameters such that the condition is met, and P and Q values are swept through.
 
-theorem_3 : claims that when c1*a_e > c4*a_i + 18 is not satisfied and the condition for theorem 2 is satisfied then multiple hysteresis will occur. if c1*a_e > c4*a_i + 18 and a_e*c2 > a_e*c1 -9, both are satisfied then for some values of P and Q, limit cycle will emerge. the theorem is tested by keeping a_e fixed and sweeping c1 0 to 25.
+Note: for theorem 1 and 2, fsolve was used to find out the fixed points. however, unstable points cannot be identified since no trajectories flow into them. 
 
-Theorem_4: for a different class of stimulus configurations, the population showing limit cycle will also show multiple hysteresis. P and Q are sweeped 0 to 10 and emergent dynamics are plotted. 
+theorem_3 : claims that when c1*a_e > c4*a_i + 18 is not satisfied and the condition for theorem 2 is satisfied then multiple hysteresis will occur. if c1*a_e > c4*a_i + 18 and condition a_e*c2 > a_e*c1 -9, both are satisfied then for a class of P and Q values, limit cycle will emerge. the theorem is tested first by choosing c1 and a_e values such that a_e*c2 > a_e*c1 -9 and c1*a_e > c4*a_i + 18 are satisfied and P and Q values are swept through. the second test involves condition a_e * a_i * c2* c3 > (a_e*c1 - 9)(a_i * c4 +9) being met and c1*a_e > c4*a_i + 18 not, and P and Q values are swept.
+Note: The Fig 11a parameters from Wilson & Cowan (1972) do not satisfy the paper's own sufficient conditions for limit cycle dynamics. The limit cycle is nonetheless reproduced numerically.
+
+Theorem_4: for a different class of stimulus configurations, the population showing limit cycle will also show multiple hysteresis. same parameters as theorem 3 for limit cycle are chosen and fixed, P and Q are swept through.
 
 
  
