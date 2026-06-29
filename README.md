@@ -45,7 +45,7 @@ The script was written in Google Colab. To run it:
 
 **On your local machine:**
 - Install dependencies: pip install numpy scipy matplotlib
-- Run: python wilson_cowan.py
+- Run: python wilson_cowan.ipynb
 
 Note: The (P,Q) parameter sweeps take several minutes to complete.
  
